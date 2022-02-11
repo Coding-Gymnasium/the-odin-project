@@ -1,3 +1,21 @@
+const plays = {
+  rock: {
+    rock: ["It's a draw", 0, 0],
+    paper: ['You lose!', 0, 1],
+    scissors: ['You win!', 1, 0],
+  },
+  paper: {
+    rock: ['You win!', 1, 0],
+    paper: ["It's a draw", 0, 0],
+    scissors: ['You lose!', 0, 1],
+  },
+  scissors: {
+    rock: ['You lose!', 0, 1],
+    paper: ['You win!', 1, 0],
+    scissors: ["It's a draw", 0, 0],
+  },
+};
+
 function computerPlay() {
   const ai = ['Rock', 'Paper', 'Scissors'];
   return ai[Math.floor(Math.random() * 3)];
@@ -5,27 +23,7 @@ function computerPlay() {
 
 function playRound() {
   let computerSelection = computerPlay().toLowerCase();
-  // let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
-  let playerSelection = 'rock';
-
-  const plays = {
-    rock: {
-      rock: ["It's a draw", 0, 0],
-      paper: ['You lose!', 0, 1],
-      scissors: ['You win!', 1, 0],
-    },
-    paper: {
-      rock: ['You win!', 1, 0],
-      paper: ["It's a draw", 0, 0],
-      scissors: ['You lose!', 0, 1],
-    },
-    scissors: {
-      rock: ['You lose!', 0, 1],
-      paper: ['You win!', 1, 0],
-      scissors: ["It's a draw", 0, 0],
-    },
-  };
-
+  let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
   let result = plays[playerSelection][computerSelection];
   let message = `Player: ${playerSelection} vs Computer: ${computerSelection}. ${result[0]}`;
   let plScore = result[1];
@@ -36,6 +34,14 @@ function playRound() {
     plScore,
     aiScore,
   };
+}
+
+function finalReport(plResults, aiResults){
+  plResults > aiResults
+    ? console.log(`${plResults} - ${aiResults}, You Won! 🏆`)
+    : (plResults = aiResults
+        ? console.log(`${plResults} - ${aiResults}, It's a Tie! 🤷🏻‍♂️`)
+        : console.log(`${plResults} - ${aiResults}, You Lost 👎`));
 }
 
 function game() {
@@ -58,7 +64,7 @@ function game() {
   console.log(`Player: ${plScore}, AI: ${aiScore}`);
 
   // 4. reports winner or loser at the end.
-
+  finalReport(plScore, aiScore)
 }
 
 console.log(game());
