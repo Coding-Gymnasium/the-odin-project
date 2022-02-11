@@ -1,3 +1,21 @@
+const plays = {
+  rock: {
+    rock: ["It's a draw", 0, 0],
+    paper: ['You lose!', 0, 1],
+    scissors: ['You win!', 1, 0],
+  },
+  paper: {
+    rock: ['You win!', 1, 0],
+    paper: ["It's a draw", 0, 0],
+    scissors: ['You lose!', 0, 1],
+  },
+  scissors: {
+    rock: ['You lose!', 0, 1],
+    paper: ['You win!', 1, 0],
+    scissors: ["It's a draw", 0, 0],
+  },
+};
+
 function computerPlay() {
   const ai = ['Rock', 'Paper', 'Scissors'];
   return ai[Math.floor(Math.random() * 3)];
@@ -7,25 +25,6 @@ function playRound() {
   let computerSelection = computerPlay().toLowerCase();
   // let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
   let playerSelection = 'rock';
-
-  const plays = {
-    rock: {
-      rock: ["It's a draw", 0, 0],
-      paper: ['You lose!', 0, 1],
-      scissors: ['You win!', 1, 0],
-    },
-    paper: {
-      rock: ['You win!', 1, 0],
-      paper: ["It's a draw", 0, 0],
-      scissors: ['You lose!', 0, 1],
-    },
-    scissors: {
-      rock: ['You lose!', 0, 1],
-      paper: ['You win!', 1, 0],
-      scissors: ["It's a draw", 0, 0],
-    },
-  };
-
   let result = plays[playerSelection][computerSelection];
   let message = `Player: ${playerSelection} vs Computer: ${computerSelection}. ${result[0]}`;
   let plScore = result[1];
@@ -59,6 +58,11 @@ function game() {
 
   // 4. reports winner or loser at the end.
 
+  plScore > aiScore
+    ? console.log(`${plScore} - ${aiScore}, You Won! 🏆`)
+    : (plScore = aiScore
+        ? console.log(`${plScore} - ${aiScore}, It's a Tie! 🤷🏻‍♂️`)
+        : console.log(`${plScore} - ${aiScore}, You Lost 👎`));
 }
 
 console.log(game());
