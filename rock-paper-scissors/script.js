@@ -39,7 +39,7 @@ function playRound() {
 function finalReport(plResults, aiResults){
   plResults > aiResults
     ? console.log(`${plResults} - ${aiResults}, You Won! 🏆`)
-    : (plResults = aiResults
+    : (plResults == aiResults
         ? console.log(`${plResults} - ${aiResults}, It's a Tie! 🤷🏻‍♂️`)
         : console.log(`${plResults} - ${aiResults}, You Lost 👎`));
 }
