@@ -8,7 +8,7 @@ const btn = document.querySelector('#btn');
 
 // using a named function
 function alertFunction() {
-  alert("hi from inside a named function");
+  alert('hi from inside a named function');
 }
 
 function consoleLogFunction() {
@@ -17,11 +17,22 @@ function consoleLogFunction() {
 
 btn.addEventListener('click', alertFunction);
 
-window.addEventListener('keypress', e => e.code === 'KeyA' && consoleLogFunction())
+window.addEventListener(
+  'keypress',
+  (e) => e.code === 'KeyA' && consoleLogFunction()
+);
 
 // The event.
 
 btn.addEventListener('click', function (event) {
   // console.log(event.target);
   event.target.style.background = 'pink';
-})
+});
+
+// Attaching listeners to groups of nodes
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => alert(button.id));
+});
