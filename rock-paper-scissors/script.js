@@ -1,3 +1,26 @@
+//----- Sounds
+//-- Buttons sounds
+
+const btns = document.querySelectorAll('button');
+const audio = new Audio(
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3'
+);
+const audio2 = new Audio(
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3'
+);
+
+btns.forEach((btn) => {
+  btn.addEventListener('mousedown', (e) => {
+    audio2.play();
+  });
+
+  btn.addEventListener('mouseup', (e) => {
+    audio.play();
+  });
+});
+
+
+//------------
 const plays = {
   rock: {
     rock: ["It's a draw", 0, 0],
@@ -23,7 +46,7 @@ function computerPlay() {
 
 function playRound() {
   let computerSelection = computerPlay().toLowerCase();
-  let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
+  // let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
   let result = plays[playerSelection][computerSelection];
   let message = `Player: ${playerSelection} vs Computer: ${computerSelection}. ${result[0]}`;
   let plScore = result[1];
@@ -36,12 +59,12 @@ function playRound() {
   };
 }
 
-function finalReport(plResults, aiResults){
+function finalReport(plResults, aiResults) {
   plResults > aiResults
     ? console.log(`${plResults} - ${aiResults}, You Won! 🏆`)
-    : (plResults == aiResults
-        ? console.log(`${plResults} - ${aiResults}, It's a Tie! 🤷🏻‍♂️`)
-        : console.log(`${plResults} - ${aiResults}, You Lost 👎`));
+    : plResults == aiResults
+    ? console.log(`${plResults} - ${aiResults}, It's a Tie! 🤷🏻‍♂️`)
+    : console.log(`${plResults} - ${aiResults}, You Lost 👎`);
 }
 
 function game() {
@@ -64,7 +87,7 @@ function game() {
   console.log(`Player: ${plScore}, AI: ${aiScore}`);
 
   // 4. reports winner or loser at the end.
-  finalReport(plScore, aiScore)
+  finalReport(plScore, aiScore);
 }
 
 console.log(game());
