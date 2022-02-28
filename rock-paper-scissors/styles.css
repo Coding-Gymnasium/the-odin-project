@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 3em;
+  color: whitesmoke;
+}
+
+.score {
+  font-size: 2em;
+  color: whitesmoke;
+}

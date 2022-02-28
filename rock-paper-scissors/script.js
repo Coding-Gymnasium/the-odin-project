@@ -79,8 +79,8 @@ function game() {
   console.log(`Player: ${plScore}, AI: ${aiScore}`);
 
   // 3. keep score based on round results
-
-  console.log(`Player: ${plScore}, AI: ${aiScore}`);
+  document.getElementById('player').textContent = `Player: ${plScore}`
+  document.getElementById('ai').textContent = `Ai: ${aiScore}`
 
   // 4. reports winner or loser at the end.
   finalReport(plScore, aiScore);
