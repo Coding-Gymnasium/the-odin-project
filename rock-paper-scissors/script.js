@@ -1,26 +1,3 @@
-//----- Sounds
-//-- Buttons sounds
-
-const btns = document.querySelectorAll('button');
-const audio = new Audio(
-  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3'
-);
-const audio2 = new Audio(
-  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3'
-);
-
-btns.forEach((btn) => {
-  btn.addEventListener('mousedown', (e) => {
-    audio2.play();
-  });
-
-  btn.addEventListener('mouseup', (e) => {
-    audio.play();
-  });
-});
-
-
-//------------
 const plays = {
   rock: {
     rock: ["It's a draw", 0, 0],
@@ -38,7 +15,33 @@ const plays = {
     scissors: ["It's a draw", 0, 0],
   },
 };
+const btns = document.querySelectorAll('button');
+let plScore = 0;
+let aiScore = 0;
 
+// ------- Audio
+const audio = new Audio(
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3'
+);
+const audio2 = new Audio(
+  'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3'
+);
+let playerSelection;
+
+//---- Buttons actions
+btns.forEach((btn) => {
+  btn.addEventListener('mousedown', () => {
+    audio2.play();
+  });
+
+  btn.addEventListener('mouseup', () => {
+    audio.play();
+    playerSelection = `${btn.id}`;
+    game();
+  });
+});
+
+// --- AI Play
 function computerPlay() {
   const ai = ['Rock', 'Paper', 'Scissors'];
   return ai[Math.floor(Math.random() * 3)];
@@ -46,7 +49,6 @@ function computerPlay() {
 
 function playRound() {
   let computerSelection = computerPlay().toLowerCase();
-  // let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
   let result = plays[playerSelection][computerSelection];
   let message = `Player: ${playerSelection} vs Computer: ${computerSelection}. ${result[0]}`;
   let plScore = result[1];
@@ -68,19 +70,13 @@ function finalReport(plResults, aiResults) {
 }
 
 function game() {
-  let plScore = 0;
-  let aiScore = 0;
 
-  // 1. run function 5 times.
-
-  for (let i = 0; i < 5; i++) {
-    let play = playRound();
-    // 2. console.log results for each round
-    console.log(play.message);
-    plScore += play.plScore;
-    aiScore += play.aiScore;
-    console.log(`Player: ${plScore}, AI: ${aiScore}`);
-  }
+  let play = playRound();
+  // 2. console.log results for each round
+  console.log(play.message);
+  plScore += play.plScore;
+  aiScore += play.aiScore;
+  console.log(`Player: ${plScore}, AI: ${aiScore}`);
 
   // 3. keep score based on round results
 
@@ -88,6 +84,11 @@ function game() {
 
   // 4. reports winner or loser at the end.
   finalReport(plScore, aiScore);
+  // 1. run function 5 times.
+  if(plScore === 5 || aiScore === 5 ) {
+    if (plScore === 5) console.log('You Won!!!')
+    if (aiScore === 5) console.log('You Lost!!!')
+    aiScore = 0;
+    plScore = 0;
+  }
 }
-
-console.log(game());
