@@ -1,17 +1,17 @@
 export const plays = {
   rock: {
-    rock: ["It's a draw", 0, 0],
-    paper: ['You lose!', 0, 1],
-    scissors: ['You win!', 1, 0],
+    rock: [ 0, 0],
+    paper: [ 0, 1],
+    scissors: [ 1, 0],
   },
   paper: {
-    rock: ['You win!', 1, 0],
-    paper: ["It's a draw", 0, 0],
-    scissors: ['You lose!', 0, 1],
+    rock: [ 1, 0],
+    paper: [ 0, 0],
+    scissors: [ 0, 1],
   },
   scissors: {
-    rock: ['You lose!', 0, 1],
-    paper: ['You win!', 1, 0],
-    scissors: ["It's a draw", 0, 0],
+    rock: [ 0, 1],
+    paper: [ 1, 0],
+    scissors: [ 0, 0],
   },
 };
