@@ -1,70 +1,80 @@
-const plays = {
-  rock: {
-    rock: ["It's a draw", 0, 0],
-    paper: ['You lose!', 0, 1],
-    scissors: ['You win!', 1, 0],
-  },
-  paper: {
-    rock: ['You win!', 1, 0],
-    paper: ["It's a draw", 0, 0],
-    scissors: ['You lose!', 0, 1],
-  },
-  scissors: {
-    rock: ['You lose!', 0, 1],
-    paper: ['You win!', 1, 0],
-    scissors: ["It's a draw", 0, 0],
-  },
-};
+import { plays } from './plays.js';
+import { audio, audio2 } from './audioFiles.js';
 
+const btns = document.querySelectorAll('button');
+let plScore = 0;
+let aiScore = 0;
+let playerSelection;
+let ps = document.getElementById('player');
+let as = document.getElementById('ai');
+let hand = document.getElementById('hand');
+let result = document.getElementById('result');
+
+//---- Buttons actions
+btns.forEach((btn) => {
+  btn.addEventListener('mousedown', () => {
+    audio2.play();
+  });
+
+  btn.addEventListener('mouseup', () => {
+    audio.play();
+    playerSelection = `${btn.id}`;
+    game();
+  });
+});
+
+// --- AI Play
 function computerPlay() {
   const ai = ['Rock', 'Paper', 'Scissors'];
   return ai[Math.floor(Math.random() * 3)];
 }
 
+// Play Round
 function playRound() {
   let computerSelection = computerPlay().toLowerCase();
-  let playerSelection = prompt('Select Rock, Paper, Scissors').toLowerCase();
   let result = plays[playerSelection][computerSelection];
-  let message = `Player: ${playerSelection} vs Computer: ${computerSelection}. ${result[0]}`;
-  let plScore = result[1];
-  let aiScore = result[2];
+  let message = `${playerSelection.toUpperCase()} vs ${computerSelection.toUpperCase()}`;
+  let playerScore = result[0];
+  let computerScore = result[1];
 
   return {
     message,
-    plScore,
-    aiScore,
+    playerScore,
+    computerScore,
   };
 }
 
-function finalReport(plResults, aiResults){
-  plResults > aiResults
-    ? console.log(`${plResults} - ${aiResults}, You Won! 🏆`)
-    : (plResults == aiResults
-        ? console.log(`${plResults} - ${aiResults}, It's a Tie! 🤷🏻‍♂️`)
-        : console.log(`${plResults} - ${aiResults}, You Lost 👎`));
+function roundReport(plResults, aiResults) {
+  if (plResults > aiResults) result.textContent = `You Win 🏆`;
+  if (plResults == aiResults) result.textContent = `It's a Tie! 🤷🏻‍`;
+  if (plResults < aiResults) result.textContent = `You Lose 👎`;
 }
 
 function game() {
-  let plScore = 0;
-  let aiScore = 0;
+  let play = playRound();
 
-  // 1. run function 5 times.
+  // Reports winner or loser at the end of each round.
+  roundReport(play.playerScore, play.computerScore);
+  hand.textContent = play.message;
 
-  for (let i = 0; i < 5; i++) {
-    let play = playRound();
-    // 2. console.log results for each round
-    console.log(play.message);
-    plScore += play.plScore;
-    aiScore += play.aiScore;
-    console.log(`Player: ${plScore}, AI: ${aiScore}`);
+  // Updates the scores
+  plScore += play.playerScore;
+  aiScore += play.computerScore;
+
+  // Round lasts 5 times.
+  if (plScore === 5 || aiScore === 5) {
+    if (plScore === 5) {
+      hand.textContent = `You Won  ${plScore} to ${aiScore} 🎉 🏆`;
+      result.textContent = '';
+    }
+    if (aiScore === 5) {
+      hand.textContent = `You Lost  ${plScore} to ${aiScore} 😬 🙈`;
+      result.textContent = '';
+    }
+    aiScore = 0;
+    plScore = 0;
   }
-
-  // 3. keep score based on round results
-
-  console.log(`Player: ${plScore}, AI: ${aiScore}`);
-
-  // 4. reports winner or loser at the end.
-  finalReport(plScore, aiScore)
+  // Displays score based on round results
+  ps.textContent = `Player: ${plScore}`;
+  as.textContent = `Ai: ${aiScore}`;
 }
-
-console.log(game());

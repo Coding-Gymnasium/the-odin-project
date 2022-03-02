@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 3em;
+  color: whitesmoke;
+}
+
+.scoreMessage {
+  text-align: center;
+  border: 1px solid yellowgreen;
+  font-size: 2em;
+  font-weight: 600;
+  color: yellowgreen;
+  width: 250px;
+  height:50px;
+}
+
+.messages {
+  font-size: 2em;
+  color: whitesmoke;
+}
