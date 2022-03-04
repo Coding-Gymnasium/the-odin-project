@@ -4,48 +4,73 @@
 }
 
 body {
+  padding: 2em;
   background-color: #111;
-}
-
-.main {
   position: absolute;
-  width: 800px;
-  height: 800px;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  padding: 2em;
+}
+
+.main {
+  width: fit-content;
+  height: auto;
+  padding: 5em;
   background-color: black;
   text-align: center;
 }
 
 .title {
-  margin-bottom: 1em;
+  margin: 1em auto;
+  text-align: center;
   font-size: 4em;
-  color: yellowgreen;
+  color: white;
 }
 
 .scoreMessage {
-  margin-bottom: 1em;
-  padding: 5px;
+  margin: 0.5em auto;
+  padding: 0 15px;
+  line-height: 60px;
   text-align: center;
-  border: 1px solid yellowgreen;
+  vertical-align: middle;
+  border: 1px solid white;
   font-size: 2em;
   font-weight: 600;
-  color: yellowgreen;
-  width: 250px;
-  height: 50px;
+  color: white;
+  width: fit-content;
+  height: 60px;
+}
+.resultGraphic {
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  border: 1px solid yellow;
+  align-items: center;
+  width: fit-content;
+}
+
+#plResultGraph, #aiResultGraph {
+  border: 1px solid white;
+  height: 200px;
+  width: 200px;
 }
 
 .messages {
+  border: 1px solid white;
   height: 150px;
-  margin: 1em 0;
-  font-size: 3em;
-  color: yellowgreen;
+  width: fit-content;
+  margin: 0.5em auto;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
 }
 
 .buttons {
-  margin-top: 3em;
+  margin-top: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
