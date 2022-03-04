@@ -3,22 +3,78 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #111;
+}
+
+.main {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  background-color: black;
+  text-align: center;
+}
+
 .title {
-  font-size: 3em;
-  color: whitesmoke;
+  margin-bottom: 1em;
+  font-size: 4em;
+  color: yellowgreen;
 }
 
 .scoreMessage {
+  margin-bottom: 1em;
+  padding: 5px;
   text-align: center;
   border: 1px solid yellowgreen;
   font-size: 2em;
   font-weight: 600;
   color: yellowgreen;
   width: 250px;
-  height:50px;
+  height: 50px;
 }
 
 .messages {
-  font-size: 2em;
+  height: 150px;
+  margin: 1em 0;
+  font-size: 3em;
+  color: yellowgreen;
+}
+
+.buttons {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons .button {
+  margin: 10px;
+  background: #e74c3c;
+  border-bottom: 15px solid #992317;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
   color: whitesmoke;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 135px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.05s linear;
+  transition: all 0.05s linear;
+  transform: translate(-5px, -3px);
+}
+
+.buttons .button:active {
+  border-bottom: 8px solid #992317;
+  background-color: #d14536;
+  transform: translateY(3px);
 }

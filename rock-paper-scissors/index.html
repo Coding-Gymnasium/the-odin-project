@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body style="background-color: #333">
-    <h1 class="title">Rock, Paper, Scissors</h1>
 
-    <div class="scoreMessage">
-      <span id="player">Player: 0</span> <span> - </span>
-      <span id="ai">AI: 0</span>
-    </div>
-    <div class="messages">
-      <div id="hand">Lets' go!</div>
-      <div id="result"></div>
+  <body>
+    <div class="main">
+      <h1 class="title">Rock, Paper, Scissors</h1>
+
+      <div class="messages">
+        <div id="hand">Lets' go!</div>
+        <div id="result"></div>
+      </div>
+
+      <div class="scoreMessage">
+        <span id="player">Player: 0</span> <span> - </span>
+        <span id="ai">AI: 0</span>
+      </div>
+
+      <div class="buttons">
+        <div class="button" id="rock" type="button">Rock</div>
+        <div class="button" id="paper" type="button">Paper</div>
+        <div class="button" id="scissors" type="button">Scissors</div>
+      </div>
     </div>
 
-    <div class="buttons">
-      <button id="rock" type="button">Rock</button>
-      <button id="paper" type="button">Paper</button>
-      <button id="scissors" type="button">Scissors</button>
-    </div>
     <script type="module" src="script.js"></script>
   </body>
 </html>

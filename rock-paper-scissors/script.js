@@ -1,7 +1,7 @@
 import { plays } from './plays.js';
 import { audio, audio2 } from './audioFiles.js';
 
-const btns = document.querySelectorAll('button');
+const btns = document.querySelectorAll('.button');
 let plScore = 0;
 let aiScore = 0;
 let playerSelection;
