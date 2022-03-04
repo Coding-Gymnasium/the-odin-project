@@ -1,7 +1,16 @@
 import { plays } from './plays.js';
-import { audio, audio2 } from './audioFiles.js';
+import {
+  audio,
+  audio2,
+  fanfair,
+  disappointment,
+  cash,
+  fail,
+  swoosh,
+} from './audioFiles.js';
 
 const btns = document.querySelectorAll('.button');
+
 let plScore = 0;
 let aiScore = 0;
 let playerSelection;
@@ -45,9 +54,21 @@ function playRound() {
 }
 
 function roundReport(plResults, aiResults) {
-  if (plResults > aiResults) result.textContent = `You Win 🏆`;
-  if (plResults == aiResults) result.textContent = `It's a Tie! 🤷🏻‍`;
-  if (plResults < aiResults) result.textContent = `You Lose 👎`;
+  if (plResults > aiResults) {
+    result.textContent = `You Win 🏆`;
+    cash.load();
+    cash.play();
+  }
+  if (plResults == aiResults) {
+    result.textContent = `It's a Tie! 🤷🏻‍`;
+    swoosh.load();
+    swoosh.play();
+  }
+  if (plResults < aiResults) {
+    result.textContent = 'You Lose 👎';
+    fail.load();
+    fail.play();
+  }
 }
 
 function game() {
@@ -65,10 +86,12 @@ function game() {
   if (plScore === 5 || aiScore === 5) {
     if (plScore === 5) {
       hand.textContent = `You Won  ${plScore} to ${aiScore} 🎉 🏆`;
+      fanfair.play();
       result.textContent = '';
     }
     if (aiScore === 5) {
       hand.textContent = `You Lost  ${plScore} to ${aiScore} 😬 🙈`;
+      disappointment.play();
       result.textContent = '';
     }
     aiScore = 0;
