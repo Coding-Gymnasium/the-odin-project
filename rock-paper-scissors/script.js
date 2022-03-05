@@ -109,6 +109,6 @@ function game() {
     plScore = 0;
   }
   // Displays score based on round results
-  ps.textContent = `Player: ${plScore}`;
-  as.textContent = `Computer: ${aiScore}`;
+  ps.textContent = `😎 Player: ${plScore}`;
+  as.textContent = `🤖 Computer: ${aiScore}`;
 }
