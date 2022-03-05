@@ -10,14 +10,23 @@ import {
 } from './audioFiles.js';
 
 const btns = document.querySelectorAll('.button');
+const prg = document.getElementById('plResultGraph')
+const arg = document.getElementById('aiResultGraph')
 
 let plScore = 0;
 let aiScore = 0;
 let playerSelection;
+let computerSelection;
 let ps = document.getElementById('player');
 let as = document.getElementById('ai');
 let hand = document.getElementById('hand');
 let result = document.getElementById('result');
+
+const icons = {
+  rock: '✊',
+  paper: '✋',
+  scissors: '✌️'
+}
 
 //---- Buttons actions
 btns.forEach((btn) => {
@@ -40,7 +49,7 @@ function computerPlay() {
 
 // Play Round
 function playRound() {
-  let computerSelection = computerPlay().toLowerCase();
+  computerSelection = computerPlay().toLowerCase();
   let result = plays[playerSelection][computerSelection];
   let message = `${playerSelection.toUpperCase()} vs ${computerSelection.toUpperCase()}`;
   let playerScore = result[0];
@@ -69,6 +78,8 @@ function roundReport(plResults, aiResults) {
     fail.load();
     fail.play();
   }
+    prg.textContent = icons[playerSelection]
+    arg.textContent = icons[computerSelection]
 }
 
 function game() {
