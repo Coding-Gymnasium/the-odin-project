@@ -131,14 +131,47 @@ header {
 }
 
 .messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
   height: auto;
   width: fit-content;
   margin: 0.5em auto;
-  font-size: 5em;
+  font-size: 3em;
   color: white;
   text-align: center;
   vertical-align: middle;
   line-height: 150px;
+}
+
+#playAgain-btn {
+  display: none;
+  margin: auto;
+  padding: 0 15px;
+  background: #e74c3c;
+  border-bottom: 15px solid #992317;
+  border-radius: 10px;
+  width: fit-content;
+  height: 100px;
+  font-size: 0.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: whitesmoke;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.05s linear;
+  transition: all 0.05s linear;
+  transform: translate(-5px, -3px);
+}
+
+#playAgain-btn:active {
+  border-bottom: 8px solid #992317;
+  background-color: #d14536;
+  transform: translateY(3px);
 }
 
 .buttons {
