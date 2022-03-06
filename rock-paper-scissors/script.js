@@ -10,14 +10,15 @@ import {
 } from './audioFiles.js';
 
 const btns = document.querySelectorAll('.button');
-const prg = document.getElementById('plResultGraph')
-const arg = document.getElementById('aiResultGraph')
+const againBtn = document.getElementById('playAgain-btn');
+const prg = document.getElementById('plResultGraph');
+const arg = document.getElementById('aiResultGraph');
 const ps = document.getElementById('player');
 const as = document.getElementById('ai');
 const hand = document.getElementById('hand');
 const result = document.getElementById('result');
-const playerWon = document.getElementById('playerGTScore')
-const computerWon = document.getElementById('computerGTScore');;
+const playerWon = document.getElementById('playerGTScore');
+const computerWon = document.getElementById('computerGTScore');
 
 let plScore = 0;
 let aiScore = 0;
@@ -29,8 +30,8 @@ let computerSelection;
 const icons = {
   rock: '✊',
   paper: '✋',
-  scissors: '✌️'
-}
+  scissors: '✌️',
+};
 
 //---- Buttons actions
 btns.forEach((btn) => {
@@ -43,6 +44,20 @@ btns.forEach((btn) => {
     playerSelection = `${btn.id}`;
     game();
   });
+});
+
+againBtn.addEventListener('mousedown', () => {
+  audio2.play();
+  hand.textContent = ''
+  againBtn.style.display = 'none'
+  prg.textContent = '?'
+  arg.textContent = '?'
+  hand.textContent = "Let's Play Again!!!"
+  result.textContent = "Choose Your Move Below"
+});
+
+againBtn.addEventListener('mouseup', () => {
+  audio.play();
 });
 
 // --- AI Play
@@ -82,8 +97,8 @@ function roundReport(plResults, aiResults) {
     fail.load();
     fail.play();
   }
-    prg.textContent = icons[playerSelection]
-    arg.textContent = icons[computerSelection]
+  prg.textContent = icons[playerSelection];
+  arg.textContent = icons[computerSelection];
 }
 
 function game() {
@@ -105,6 +120,7 @@ function game() {
       result.textContent = '';
       plGames += 1;
       playerWon.textContent = plGames;
+      againBtn.style.display = 'block'
     }
     if (aiScore === 5) {
       hand.textContent = `You Lost  ${plScore} to ${aiScore} 😬 🙈`;
@@ -112,11 +128,10 @@ function game() {
       result.textContent = '';
       aiGames += 1;
       computerWon.textContent = aiGames;
-
+      againBtn.style.display = 'block'
     }
     plScore = 0;
     aiScore = 0;
-    
   }
   // Displays score based on round results
   ps.textContent = `😎 Player: ${plScore}`;
