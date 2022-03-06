@@ -12,15 +12,19 @@ import {
 const btns = document.querySelectorAll('.button');
 const prg = document.getElementById('plResultGraph')
 const arg = document.getElementById('aiResultGraph')
+const ps = document.getElementById('player');
+const as = document.getElementById('ai');
+const hand = document.getElementById('hand');
+const result = document.getElementById('result');
+const playerWon = document.getElementById('playerGTScore')
+const computerWon = document.getElementById('computerGTScore');;
 
 let plScore = 0;
 let aiScore = 0;
+let plGames = 0;
+let aiGames = 0;
 let playerSelection;
 let computerSelection;
-let ps = document.getElementById('player');
-let as = document.getElementById('ai');
-let hand = document.getElementById('hand');
-let result = document.getElementById('result');
 
 const icons = {
   rock: '✊',
@@ -99,14 +103,20 @@ function game() {
       hand.textContent = `You Won  ${plScore} to ${aiScore} 🎉 🏆`;
       fanfair.play();
       result.textContent = '';
+      plGames += 1;
+      playerWon.textContent = plGames;
     }
     if (aiScore === 5) {
       hand.textContent = `You Lost  ${plScore} to ${aiScore} 😬 🙈`;
       disappointment.play();
       result.textContent = '';
+      aiGames += 1;
+      computerWon.textContent = aiGames;
+
     }
-    aiScore = 0;
     plScore = 0;
+    aiScore = 0;
+    
   }
   // Displays score based on round results
   ps.textContent = `😎 Player: ${plScore}`;
