@@ -14,12 +14,9 @@ body {
   align-items: center;
 }
 
-.main {
-  width: 60%;
-  height: auto;
-  padding: 5em;
-  background-color: black;
-  text-align: center;
+header {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -29,18 +26,92 @@ body {
   color: white;
 }
 
-.scoreMessage {
-  margin: 1em auto;
-  padding: 0 15px;
-  line-height: 60px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2em;
-  font-weight: 600;
-  color: white;
-  width: fit-content;
-  height: 60px;
+/*--------------------------------------------*/
+
+.gamesScore {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  gap: 1em;
 }
+
+.gamesTally {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid white;
+  min-width: 300px;
+  min-height: 15%;
+  padding: 0.5em;
+  color: white;
+  text-align: center;
+}
+
+#gamesTallyScores {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#gamesTallyScores h2 {
+  font-size: 2em;
+  margin-bottom: 3em;
+}
+
+#playerGameTally,
+#computerGamesTally {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#gamesTallyTitle {
+  font-size: 2.5em;
+}
+
+#computerGameTallyTitle, #playerGameTallyTitle {
+  font-size: 1em;
+}
+
+#computerGTScore, #playerGTScore {
+  font-size: 3em;
+}
+
+.scoreMessage {
+  display: flex;
+  flex-grow: 4;
+  gap: 1em;
+  margin: auto;
+  padding: 0 15px;
+  vertical-align: middle;
+  width: fit-content;
+  height: 150px;
+  line-height: 150px;
+}
+#player,
+#ai {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  font-weight: 600;
+  /* border: 1px solid white; */
+}
+
+/*--------------------------------------------*/
+
+.game {
+  width: 100%;
+  height: auto;
+  padding: 5em;
+  /* background-color: black; */
+  text-align: center;
+}
+
 .resultGraphic {
   margin: auto;
   padding: 15px;
@@ -56,13 +127,14 @@ body {
   height: 200px;
   width: 200px;
   font-size: 10em;
+  color: gold;
 }
 
 .messages {
   height: auto;
   width: fit-content;
   margin: 0.5em auto;
-  font-size: 3em;
+  font-size: 5em;
   color: white;
   text-align: center;
   vertical-align: middle;
@@ -73,6 +145,7 @@ body {
   margin-top: 0.5em;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 }
 
