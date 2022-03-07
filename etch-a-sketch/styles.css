@@ -5,14 +5,14 @@
   transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
-  border: 3px solid black;
+  border: 3px solid darkkhaki;
   width: 400px;
   height: 400px;
 }
 
 #square {
+  margin: 0;
   width: 10px;
-  height:10px;
+  height: 10px;
   background: ivory;
-  /* border: 1px solid red; */
 }
