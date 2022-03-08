@@ -1,3 +1,5 @@
+import {ClearButton} from './components/ClearGrid.js';
+
 const grid = document.querySelector('.grid');
 const square = "<div id='square'></div>";
 const sizeSign = document.querySelector('#sizeSign');
@@ -10,6 +12,9 @@ sizeSign.textContent = `GRID: ${inputedSize} x ${inputedSize}`;
 grid.style.width = `${inputedSize * 10}px`;
 grid.style.height = `${inputedSize * 10}px`;
 let size = inputedSize * inputedSize;
+
+//---- Clear Grid
+ClearButton(grid);
 
 while (count <= size) {
   grid.insertAdjacentHTML('afterbegin', square);
