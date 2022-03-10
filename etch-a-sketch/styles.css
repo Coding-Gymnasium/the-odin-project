@@ -38,3 +38,14 @@ body {
   height: 10px;
   background: ivory;
 }
+
+input:out-of-range {
+  border: 1px solid red;
+  color: red;
+  background: pink;
+}
+
+#log {
+  display: none;
+  color: red;
+}
