@@ -1,4 +1,5 @@
 import { ClearButton } from './components/ClearGrid.js';
+import { PaintSquare } from './components/PaintSquare.js';
 
 const grid = document.querySelector('.grid');
 const square = "<div id='square'></div>";
@@ -6,6 +7,7 @@ const sizeSign = document.querySelector('#sizeSign');
 const log = document.getElementById('log');
 let inputedSize = 40;
 let size;
+let count = 1;
 
 //---- Set Grid Size
 
@@ -26,8 +28,6 @@ document.getElementById('setGridSize').addEventListener('click', function (e) {
   }
 });
 
-let count = 1;
-let pressing = false;
 
 grid.style.width = `${inputedSize * 10}px`;
 grid.style.height = `${inputedSize * 10}px`;
@@ -42,18 +42,5 @@ while (count <= size) {
   count++;
 }
 
-//---- paint
-const paint = (e) => {
-  e.preventDefault();
-  grid.addEventListener('mousemove', (e) => {
-    if (pressing) e.target.style.background = 'black';
-  });
-  grid.addEventListener('mouseup', () => {
-    pressing = false;
-  });
-};
-
-grid.addEventListener('mousedown', (e) => {
-  pressing = true;
-  paint(e);
-});
+//---- paint squares
+PaintSquare(grid);

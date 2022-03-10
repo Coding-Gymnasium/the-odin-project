@@ -30,6 +30,7 @@ body {
   border: 3px solid darkkhaki;
   width: 400px;
   height: 400px;
+  background: grey;
 }
 
 #square {
