@@ -8,7 +8,22 @@
   </head>
 
   <body>
-    <div id="sizeSign"></div>
+    <div class="Grid-setup-container">
+      Choose a Size:
+      <input
+        name="gridSize"
+        id="number"
+        type="number"
+        min="20"
+        max="60"
+        placeholder="Enter your username"
+        value="40"
+      />
+      <button id="setGridSize" type="button">Send</button>
+      <div id="sizeSign"></div>
+
+      <p id="log">Please choose an even number between 30 and 60</p>
+    </div>
 
     <div class="main">
       <div class="grid"></div>
