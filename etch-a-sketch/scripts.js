@@ -14,3 +14,17 @@ PaintSquare(grid);
 ResetSquares(grid, sizeSign, inputedSize);
 ChangeGridSize(grid, inputedSize, sizeSign);
 ColorPicker(grid);
+
+const pencilBtn = document.querySelector('.chgPenSize');
+
+pencilBtn.addEventListener('click', (e) => {
+  let size = e.target.value;
+
+  let sqs = grid.querySelectorAll('#square');
+  sqs.forEach((square) => {
+    square.style.width = `${size}px`;
+    square.style.height = `${size}px`;
+    square.style.background = 'red';
+    square.style.border = '0.25px solid black';
+  });
+});
