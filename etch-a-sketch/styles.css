@@ -16,12 +16,17 @@ body {
   font-size: 1.5em;
 }
 
+.Grid-setup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+
+}
 .main {
-  border: 1px solid red;
   width: fit-content;
   height: fit-content;
-  padding: 5px;
-
+  margin-top: 1em;
 }
 
 .grid {
@@ -31,6 +36,7 @@ body {
   width: 400px;
   height: 400px;
   background: grey;
+  margin: 1em 0;
 }
 
 #square {

@@ -9,27 +9,30 @@
 
   <body>
     <div class="Grid-setup-container">
-      Choose a Size:
-      <input
-        name="gridSize"
-        id="number"
-        type="number"
-        min="20"
-        max="60"
-        placeholder="Enter your username"
-        value="40"
-      />
-      <button id="setGridSize" type="button">Send</button>
-      <div id="sizeSign"></div>
+      <div id="chgSizeFrom">
+        Change Grid Size:
+        <input
+          name="gridSize"
+          id="number"
+          type="number"
+          min="20"
+          max="60"
+          placeholder="Enter your username"
+          value="40"
+        />
 
-      <p id="log">Please choose an even number between 30 and 60</p>
+        <button id="setGridSize" type="button">Submit</button>
+
+        <p id="log">Please choose an even number between 30 and 60</p>
+      </div>
+      <div id="sizeSign"></div>
     </div>
 
     <div class="main">
       <div class="grid"></div>
     </div>
 
-    <button id="clear-btn" type="submit">Clear Grid</button>
+    <button id="clear-btn" type="submit">Erase Drawing</button>
 
     <script type="module" src="scripts.js"></script>
   </body>
