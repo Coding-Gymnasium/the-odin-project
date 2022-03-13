@@ -1,5 +1,5 @@
 import { BuildGrid } from './components/BuildGrid.js';
-import { ChangeGridSize } from './components/ChangeGridSize.js';
+import { ChangeGridDensity } from './components/ChangeGridDensity.js';
 import { ClearSquares } from './components/ClearSquares.js';
 import { ColorPicker } from './components/ColorPicker.js';
 import { PaintSquare } from './components/PaintSquare.js';
@@ -12,4 +12,4 @@ BuildGrid(sizeSign, gridDensity);
 PaintSquare(grid);
 ClearSquares(grid);
 ColorPicker(grid);
-ChangeGridSize(grid);
+ChangeGridDensity(grid);
