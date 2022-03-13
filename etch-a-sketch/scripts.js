@@ -7,9 +7,11 @@ import { PaintSquare } from './components/PaintSquare.js';
 const grid = document.querySelector('.grid-container');
 const sizeSign = document.querySelector('#sizeSign');
 const gridDensity = 40;
+sizeSign.textContent = `GRID: ${gridDensity} x ${gridDensity}`;
 
-BuildGrid(sizeSign, gridDensity);
+
+BuildGrid(gridDensity);
 PaintSquare(grid);
 ClearSquares(grid);
 ColorPicker(grid);
-ChangeGridDensity(grid);
+ChangeGridDensity(grid, sizeSign);

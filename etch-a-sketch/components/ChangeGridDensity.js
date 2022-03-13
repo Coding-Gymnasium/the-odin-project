@@ -1,6 +1,6 @@
 import { BuildGrid } from './BuildGrid.js';
 
-export const ChangeGridDensity = (grid) => {
+export const ChangeGridDensity = (grid, sizeSign) => {
   const notifications = document.querySelector('.notifications');
 
   document.getElementById('setGridSize').addEventListener('click', function () {
@@ -11,8 +11,9 @@ export const ChangeGridDensity = (grid) => {
       input.focus();
     } else {
       notifications.style.display = 'none';
-      BuildGrid(grid, val);
-      document.querySelector('#sizeSign').textContent = `GRID: ${val} x ${val}`;
+      sizeSign.textContent = `GRID: ${val} x ${val}`;
+
+      BuildGrid(val);
     }
   });
 };
