@@ -1,15 +1,21 @@
-export const BuildGrid = (inputedSize, grid, sizeSign) => {
-  const square = "<div id='square'></div>";
-  let size;
-  let count = 1;
+export const BuildGrid = (gridDensity) => {
+  gridDensity = Number.parseInt(gridDensity);
+  let contSize = 600;
+  let gridWidth = contSize / gridDensity;
+  const grid = document.querySelector('.grid-container');
 
-  sizeSign.textContent = `GRID: ${inputedSize} x ${inputedSize}`;
-  grid.style.width = `${inputedSize * 10}px`;
-  grid.style.height = `${inputedSize * 10}px`;
-  size = inputedSize * inputedSize;
-  
-  while (count <= size) {
-    grid.insertAdjacentHTML('afterbegin', square);
-    count++;
+  grid.style.width = `${contSize}px`;
+  grid.style.height = `${contSize}px`;
+  grid.style.gridTemplateColumns = ` repeat( ${gridDensity}, ${gridWidth}px) `;
+  grid.style.gridTemplateRows = ` repeat( ${gridDensity}, ${gridWidth}px)`;
+
+  let sqs = document.querySelectorAll('.grid-item');
+
+  if (sqs) sqs.forEach((sq) => sq.remove());
+
+  for (let i = 0; i < gridDensity ** 2; i++) {
+    const square = document.createElement('div');
+    square.classList.add('grid-item');
+    grid.appendChild(square);
   }
 };

@@ -1,16 +1,17 @@
-import { ResetSquares } from './components/ResetSquares.js';
-import { PaintSquare } from './components/PaintSquare.js';
 import { BuildGrid } from './components/BuildGrid.js';
-import { ChangeGridSize } from './components/ChangeGridSize.js';
+import { ChangeGridDensity } from './components/ChangeGridDensity.js';
+import { ClearSquares } from './components/ClearSquares.js';
 import { ColorPicker } from './components/ColorPicker.js';
+import { PaintSquare } from './components/PaintSquare.js';
 
-const grid = document.querySelector('.grid');
+const grid = document.querySelector('.grid-container');
 const sizeSign = document.querySelector('#sizeSign');
+const gridDensity = 40;
+sizeSign.textContent = `GRID: ${gridDensity} x ${gridDensity}`;
 
-let inputedSize = 40;
 
-BuildGrid(inputedSize, grid, sizeSign);
+BuildGrid(gridDensity);
 PaintSquare(grid);
-ResetSquares(grid, sizeSign, inputedSize);
-ChangeGridSize(grid, inputedSize, sizeSign);
+ClearSquares(grid);
 ColorPicker(grid);
+ChangeGridDensity(grid, sizeSign);

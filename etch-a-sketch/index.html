@@ -9,41 +9,40 @@
 
   <body>
     <div class="main">
-      <div class="setting-container">
-        <div id="<chgSizeForm">
-          Change Grid Size:
-          <input
-            name="gridSize"
-            id="number"
-            type="number"
-            min="20"
-            max="60"
-            placeholder="Enter your username"
-            value="40"
-          />
-
-          <button id="setGridSize" type="button">Submit</button>
-
-          <p id="log">Please choose an even number between 30 and 60</p>
-        </div>
-        <div id="sizeSign"></div>
-
-        <div class="colorpickerContainer">
-          <label for="colorpicker">Change Color: </label>
-          <input
-            id="colorpicker"
-            name="colorpicker"
-            type="color"
-            value="#333333"
-          />
-        </div>
+      <div class="notifications">
+        <p id="log">Please choose a number between 4 and 60</p>
       </div>
 
-      <div class="grid"></div>
+      <div id="sizeSign"></div>
 
-      <button id="clear-btn" type="submit">Erase Drawing</button>
+      <div class="settings-container">
+        <div id="<chgSizeForm">
+          <label>Change Grid Density: </label>
+          <input
+            name="gridDensity"
+            id="number"
+            type="number"
+            min="4"
+            max="60"
+            value="40"
+          />
+          <button id="setGridSize" type="button">Submit</button>
+        </div>
+
+        <label for="colorpicker">Pick Color: </label>
+        <input
+          id="colorpicker"
+          name="colorpicker"
+          type="color"
+          value="#333333"
+        />
+      </div>
+      <button id="clear-btn" type="submit">Clear Drawing</button>
+
+      <div class="grid-wrapper">
+        <div class="grid-container"></div>
+      </div>
     </div>
-
     <script type="module" src="scripts.js"></script>
   </body>
 </html>
