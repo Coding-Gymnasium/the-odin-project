@@ -6,7 +6,7 @@ import { ColorPicker } from './components/ColorPicker.js';
 
 const grid = document.querySelector('.grid');
 const sizeSign = document.querySelector('#sizeSign');
-
+const pencilBtn = document.querySelector('.chgPenSize');
 let inputedSize = 40;
 
 BuildGrid(inputedSize, grid, sizeSign);
@@ -15,16 +15,7 @@ ResetSquares(grid, sizeSign, inputedSize);
 ChangeGridSize(grid, inputedSize, sizeSign);
 ColorPicker(grid);
 
-const pencilBtn = document.querySelector('.chgPenSize');
-
 pencilBtn.addEventListener('click', (e) => {
   let size = e.target.value;
-
-  let sqs = grid.querySelectorAll('#square');
-  sqs.forEach((square) => {
-    square.style.width = `${size}px`;
-    square.style.height = `${size}px`;
-    square.style.background = 'red';
-    square.style.border = '0.25px solid black';
-  });
+  BuildGrid(inputedSize,grid, sizeSign, size)
 });
