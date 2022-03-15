@@ -1,7 +1,7 @@
 import { BuildGrid } from './BuildGrid.js';
 
 export const ChangeGridDensity = (grid, sizeSign) => {
-  const notifications = document.querySelector('.notifications');
+  const notifications = document.querySelector('#log');
 
   document.getElementById('setGridSize').addEventListener('click', function () {
     let input = document.getElementById('number'),
