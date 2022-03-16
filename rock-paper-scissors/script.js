@@ -10,7 +10,7 @@ import {
 } from './audioFiles.js';
 
 const btns = document.querySelectorAll('.button');
-const btnsDiv = document.querySelector('.buttonsContainer');
+const gameDiv = document.querySelector('.game');
 const againBtn = document.getElementById('playAgain-btn');
 const prg = document.getElementById('plResultGraph');
 const arg = document.getElementById('aiResultGraph');
@@ -43,6 +43,8 @@ btns.forEach((btn) => {
   btn.addEventListener('mouseup', () => {
     audio.play();
     playerSelection = `${btn.id}`;
+    prg.classList.remove('spinEmoji');
+    arg.classList.remove('spinEmoji');
     game();
   });
 });
@@ -53,11 +55,11 @@ againBtn.addEventListener('mousedown', () => {
   againBtn.style.display = 'none';
   prg.textContent = '?';
   arg.textContent = '?';
-  prg.classList.add('spinEmoji')
-  arg.classList.add('spinEmoji')
+  prg.classList.add('spinEmoji');
+  arg.classList.add('spinEmoji');
   hand.textContent = "Let's Play Again!!!";
   result.textContent = 'Choose Your Move Below';
-  btnsDiv.style.display = 'block';
+  gameDiv.style.display = 'block';
 });
 
 againBtn.addEventListener('mouseup', () => {
@@ -136,7 +138,7 @@ function game() {
     }
     plScore = 0;
     aiScore = 0;
-    btnsDiv.style.display = 'none';
+    gameDiv.style.display = 'none';
   }
   // Displays score based on round results
   ps.textContent = `😎 Player: ${plScore}`;
