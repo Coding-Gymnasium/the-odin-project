@@ -11,43 +11,42 @@
     <header>
       <h1 class="title">Rock, Paper, Scissors</h1>
     </header>
+    <div class="container">
+      <div class="gamesScore">
+        <div class="gamesTally">
+          <h2 id="gamesTallyTitle">GAMES</h2>
 
-    <div class="gamesScore">
-      <div class="gamesTally">
-        <h2 id="gamesTallyTitle">GAMES</h2>
+          <div id="gamesTallyScores">
+            <div id="playerGamesTally">
+              <div id="playerGTScore">0</div>
+              <div id="playerGameTallyTitle">PLAYER</div>
+            </div>
 
-        <div id="gamesTallyScores">
-          <div id="playerGamesTally">
-            <div id="playerGTScore">0</div>
-            <div id="playerGameTallyTitle">PLAYER</div>
+            <div id="computerGamesTally">
+              <div id="computerGTScore">0</div>
+              <div id="computerGameTallyTitle">COMPUTER</div>
+            </div>
           </div>
+        </div>
 
-          <div id="computerGamesTally">
-            <div id="computerGTScore">0</div>
-            <div id="computerGameTallyTitle">COMPUTER</div>
-          </div>
+        <div class="scoreMessage">
+          <div id="player">😎 Player: 0</div>
+          <div id="ai">🤖 Computer: 0</div>
         </div>
       </div>
 
-      <div class="scoreMessage">
-        <div id="player">😎 Player: 0</div>
-        <div id="ai">🤖 Computer: 0</div>
-      </div>
-    </div>
-
-    <div class="messages">
-      <span id="hand">Let's Play!</span>
-      <span id="result">Choose Your Move Below</span>
-      <button id="playAgain-btn">Play Again</button>
-    </div>
-
-    <div class="game">
-      <div class="resultGraphic">
-        <div id="plResultGraph">?</div>
-        <div id="aiResultGraph">?</div>
+      <div class="messages">
+        <span id="hand">Let's Play!</span>
+        <span id="result">Choose Your Move Below</span>
+        <button id="playAgain-btn">Play Again</button>
       </div>
 
-      <div class="buttonsContainer">
+      <div class="game">
+        <div class="resultGraphic">
+          <div id="plResultGraph">?</div>
+          <div id="aiResultGraph">?</div>
+        </div>
+
         <div class="buttons">
           <div class="button" id="rock" type="button">Rock</div>
           <div class="button" id="paper" type="button">Paper</div>
@@ -55,7 +54,6 @@
         </div>
       </div>
     </div>
-
     <script type="module" src="script.js"></script>
   </body>
 </html>
