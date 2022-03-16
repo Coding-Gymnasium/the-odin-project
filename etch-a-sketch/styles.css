@@ -107,3 +107,14 @@ button {
   font-size: 1.25em;
   font-weight: 500;
 }
+
+.sample {
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  position: relative;
+  border: 1px solid #ddd;
+  float: left;
+  transition: all 0.2s;
+  background-color: rgb(63, 127, 191);
+}
