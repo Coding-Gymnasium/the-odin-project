@@ -114,12 +114,26 @@ header {
 
 .resultGraphic {
   margin: auto;
-  padding: 15px;
+  padding: 2em;
   display: flex;
-  gap: 15px;
+  gap: 2em;
   justify-content: center;
   align-items: center;
   width: fit-content;
+}
+.spinEmoji {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 #plResultGraph,
@@ -172,6 +186,10 @@ header {
   border-bottom: 8px solid #992317;
   background-color: #d14536;
   transform: translateY(3px);
+}
+
+.buttonsContainer {
+  display: block;
 }
 
 .buttons {

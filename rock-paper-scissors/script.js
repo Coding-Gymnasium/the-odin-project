@@ -10,6 +10,7 @@ import {
 } from './audioFiles.js';
 
 const btns = document.querySelectorAll('.button');
+const btnsDiv = document.querySelector('.buttonsContainer');
 const againBtn = document.getElementById('playAgain-btn');
 const prg = document.getElementById('plResultGraph');
 const arg = document.getElementById('aiResultGraph');
@@ -48,12 +49,15 @@ btns.forEach((btn) => {
 
 againBtn.addEventListener('mousedown', () => {
   audio2.play();
-  hand.textContent = ''
-  againBtn.style.display = 'none'
-  prg.textContent = '?'
-  arg.textContent = '?'
-  hand.textContent = "Let's Play Again!!!"
-  result.textContent = "Choose Your Move Below"
+  hand.textContent = '';
+  againBtn.style.display = 'none';
+  prg.textContent = '?';
+  arg.textContent = '?';
+  prg.classList.add('spinEmoji')
+  arg.classList.add('spinEmoji')
+  hand.textContent = "Let's Play Again!!!";
+  result.textContent = 'Choose Your Move Below';
+  btnsDiv.style.display = 'block';
 });
 
 againBtn.addEventListener('mouseup', () => {
@@ -120,7 +124,7 @@ function game() {
       result.textContent = '';
       plGames += 1;
       playerWon.textContent = plGames;
-      againBtn.style.display = 'block'
+      againBtn.style.display = 'block';
     }
     if (aiScore === 5) {
       hand.textContent = `You Lost  ${plScore} to ${aiScore} 😬 🙈`;
@@ -128,10 +132,11 @@ function game() {
       result.textContent = '';
       aiGames += 1;
       computerWon.textContent = aiGames;
-      againBtn.style.display = 'block'
+      againBtn.style.display = 'block';
     }
     plScore = 0;
     aiScore = 0;
+    btnsDiv.style.display = 'none';
   }
   // Displays score based on round results
   ps.textContent = `😎 Player: ${plScore}`;
