@@ -16,7 +16,11 @@
         <p id="log">Please choose a number between 4 and 60</p>
       </div>
 
-      <div id="sizeSign"></div>
+      <h2 id="sizeSign"></h2>
+
+      <div class="grid-wrapper">
+        <div class="grid-container"></div>
+      </div>
 
       <div class="settings-container">
         <div id="<chgSizeForm">
@@ -32,18 +36,14 @@
           <button id="setGridSize" type="button">Submit</button>
         </div>
 
-        <label for="colorpicker">Pick Color: </label>
+        <label for="colorpicker">Pick Color</label>
         <input
           id="colorpicker"
           name="colorpicker"
           type="color"
           value="#333333"
         />
-      </div>
-      <button id="clear-btn" type="submit">Clear Drawing</button>
-
-      <div class="grid-wrapper">
-        <div class="grid-container"></div>
+        <button id="clear-btn" type="submit">Clear Drawing</button>
       </div>
     </div>
     <script type="module" src="scripts.js"></script>
