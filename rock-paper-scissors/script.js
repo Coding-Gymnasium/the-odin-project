@@ -20,6 +20,8 @@ const hand = document.getElementById('hand');
 const result = document.getElementById('result');
 const playerWon = document.getElementById('playerGTScore');
 const computerWon = document.getElementById('computerGTScore');
+const modal = document.querySelector('.modal');
+const mBtn = document.querySelector('.close');
 
 let plScore = 0;
 let aiScore = 0;
@@ -34,7 +36,17 @@ const icons = {
   scissors: '✌️',
 };
 
-//---- Buttons actions
+// ---- Modal
+mBtn.addEventListener('mousedown', () => {
+  audio2.play();
+});
+
+mBtn.addEventListener('mouseup', () => {
+  audio.play();
+  modal.style.display = 'none';
+});
+
+//---- Play Buttons actions
 btns.forEach((btn) => {
   btn.addEventListener('mousedown', () => {
     audio2.play();
