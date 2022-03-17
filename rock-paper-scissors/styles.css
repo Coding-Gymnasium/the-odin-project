@@ -13,6 +13,69 @@ body {
   justify-content: center;
   align-items: center;
 }
+/*--------------------------------------------*/
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.close {
+  width: 150px;
+  height: 150px;
+  font-size: 2em;
+  font-weight: 700;
+  color: white;
+  border-radius: 50%;
+  border: 3px solid #d14536;
+  background-color: #e02310;
+  cursor: pointer;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.close:active {
+  background-color: #e02310;
+  width: 155px;
+  height: 155px;
+  border: 15px solid #ff1a03;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close:hover,
+.close:focus {
+  animation-name: unset;
+}
+/*--------------------------------------------*/
 
 header {
   display: flex;
@@ -175,8 +238,8 @@ header {
   display: none;
   margin: auto;
   padding: 0 15px;
-  background: #e74c3c;
-  border-bottom: 15px solid #992317;
+  background: #ff1800;
+  border-bottom: 15px solid #e02310;
   border-radius: 10px;
   width: fit-content;
   height: 100px;
@@ -196,7 +259,7 @@ header {
 }
 
 #playAgain-btn:active {
-  border-bottom: 8px solid #992317;
+  border-bottom: 8px solid #e02310;
   background-color: #d14536;
   transform: translateY(3px);
 }
@@ -211,8 +274,8 @@ header {
 
 .buttons .button {
   margin: 10px;
-  background: #e74c3c;
-  border-bottom: 15px solid #992317;
+  background: #ff1800;
+  border-bottom: 15px solid #e02310;
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -232,7 +295,7 @@ header {
 }
 
 .buttons .button:active {
-  border-bottom: 8px solid #992317;
-  background-color: #d14536;
-  transform: translateY(3px);
+  border-bottom: 8px solid #e02310;
+  background-color: #e02310;
+  transform: translateY(6px);
 }
