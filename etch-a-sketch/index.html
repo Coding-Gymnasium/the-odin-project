@@ -23,7 +23,7 @@
       </div>
 
       <div class="settings-container">
-        <div id="<chgSizeForm">
+        <div class="changeSizeForm">
           <label>Change Grid Density: </label>
           <input
             name="gridDensity"
@@ -36,17 +36,26 @@
           <button id="setGridSize" type="button">Submit</button>
         </div>
 
-        <label for="colorpicker">Pick Color</label>
-        <input
-          id="colorpicker"
-          name="colorpicker"
-          type="color"
-          value="#333333"
-        />
-        <button id="clear-btn" type="submit">Clear Drawing</button>
-      </div>
+        <div class="colorSettings">
+          <label for="colorpicker">Pick Color</label>
+          <input
+            id="colorpicker"
+            name="colorpicker"
+            type="color"
+            value="#333333"
+          />
+          <button id="clear-btn" type="submit">Clear Drawing</button>
 
-      <div class="sample"></div>
+          <div class="colorPalette">
+            <div id="color-1"></div>
+            <div id="color-2"></div>
+            <div id="color-3"></div>
+            <div id="color-4"></div>
+            <div id="color-5"></div>
+            <div id="color-6"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="scripts.js"></script>
   </body>
