@@ -23,38 +23,41 @@
       </div>
 
       <div class="settings-container">
-        <div class="changeSizeForm">
-          <label>Change Grid Density: </label>
-          <input
-            name="gridDensity"
-            id="number"
-            type="number"
-            min="4"
-            max="60"
-            value="40"
-          />
-          <button id="setGridSize" type="button">Submit</button>
-        </div>
+          <div class="changeSizeForm">
+            <label>Change Grid Density: </label>
+            <input
+              name="gridDensity"
+              id="number"
+              type="number"
+              min="4"
+              max="60"
+              value="40"
+            />
+            <button id="setGridSize" type="button">Submit</button>
+          </div>
 
-        <div class="colorSettings">
-          <label for="colorpicker">Pick Color</label>
-          <input
-            id="colorpicker"
-            name="colorpicker"
-            type="color"
-            value="#333333"
-          />
-          <button id="clear-btn" type="submit">Clear Drawing</button>
+        <div id="divTwo">
+          <div class="colorSettings">
+            <label for="colorpicker">Color Picker</label>
+            <input
+              id="colorpicker"
+              name="colorpicker"
+              type="color"
+              value="#333333"
+            />
+          </div>
 
           <div class="colorPalette">
-            <div class='clr-btn' id="color-1"></div>
-            <div class='clr-btn' id="color-2"></div>
-            <div class='clr-btn' id="color-3"></div>
-            <div class='clr-btn' id="color-4"></div>
-            <div class='clr-btn' id="color-5"></div>
-            <div class='clr-btn' id="color-6"></div>
+            <label for="colorPalette">Color Buttons</label>
+            <div class="clr-btn" id="color-1"></div>
+            <div class="clr-btn" id="color-2"></div>
+            <div class="clr-btn" id="color-3"></div>
+            <div class="clr-btn" id="color-4"></div>
+            <div class="clr-btn" id="color-5"></div>
+            <div class="clr-btn" id="color-6"></div>
           </div>
         </div>
+        <button id="clear-btn" type="submit">Clear Drawing</button>
       </div>
     </div>
     <script type="module" src="scripts.js"></script>
