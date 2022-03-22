@@ -49,6 +49,7 @@ header h1 {
   justify-content: center;
   align-items: center;
   margin-top: 1em;
+  margin-bottom: 1em;
   width: 660px;
   height: 660px;
   background-color: #202020;
@@ -69,22 +70,43 @@ header h1 {
 
 .settings-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 10px;
   align-items: center;
-  height: 4em;
-  margin-top: 2em;
+  gap: 1em;
   padding: 1em;
-  border: 1px solid black;
-  background-color: #e8e8e8;
+  border: 2px solid #333;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
+.colorSettings,
+.changeSizeForm,
+.colorPalette {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: auto;
+  padding: 1em;
 }
-input[type=number] {
+.colorPalette {
+  width: fit-content;
+}
+
+#divTwo {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+}
+input[type='number'] {
   font-size: 1em;
+}
+
+input[type='color'] {
+  width: 35px;
+  height: 35px;
 }
 
 .settings-container label,
@@ -106,4 +128,60 @@ button {
   color: red;
   font-size: 1.25em;
   font-weight: 500;
+}
+
+#color-1,
+#color-2,
+#color-3,
+#color-4,
+#color-5,
+#color-6 {
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  position: relative;
+  border: 2px solid black;
+  float: left;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#color-1:active,
+#color-2:active,
+#color-3:active,
+#color-4:active,
+#color-5:active,
+#color-6:active {
+  width: 33px;
+  height: 33px;
+  border: 4px solid black;
+}
+
+#color-1 {
+  background-color: red;
+}
+
+#color-2 {
+  background-color: blue;
+}
+
+#color-3 {
+  background-color: yellow;
+}
+
+#color-4 {
+  background-color: green;
+}
+
+#color-5 {
+  background-color: orange;
+}
+
+#color-6 {
+  background-color: pink;
+}
+
+#clear-btn {
+  width: 150px;
+  height: 50px;
 }
