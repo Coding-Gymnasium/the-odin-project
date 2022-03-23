@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 2em;
+  background-color: #333333;
+}
+
+body,
+main,
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+header {
+  color: whitesmoke;
+  margin-bottom: 1em;
+}
+
+main {
+  background-color: white;
+  border: 2px solid black;
+  height: 1000px;
+  width: 1000px;
+}
+
+section {
+  background-color: yellow;
+  height:800px;
+  width: 600px;
+}
+
+box {
+  background-color: blue;
+  height: 700px;
+  width: 500px;
+}
