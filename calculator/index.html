@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <title>Calculator</title>
-    <link rel='icon' type='image/x-icon' href='./public/calculator.png'>
+    <link rel='icon' type='image/x-icon' href='./public/calculator.png' />
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link href='style.css' rel='stylesheet' />
@@ -14,10 +14,20 @@
     <section>
       <box>
         <div id='display'></div>
-        <div id='reset-buttons'></div>
+        <div id='reset-buttons'>
+          <div id='clear-btn'></div>
+          <div id='undo-btn'></div>
+        </div>
         <div id='btm-inner-box'>
-          <div id='numbers'></div>
-          <div id='operations'></div>
+          <div id='numbers'>
+            <div id='number-btn'>1</div>
+          </div>
+          <div id='operations'>
+            <div id='operation-btn'>÷</div>
+            <div id='operation-btn'>x</div>
+            <div id='operation-btn'>-</div>
+            <div id='operation-btn'>+</div>
+          </div>
         </div>
       </box>
     </section>
