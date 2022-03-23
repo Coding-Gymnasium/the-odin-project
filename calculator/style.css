@@ -9,7 +9,6 @@ body {
 }
 
 body,
-main,
 section {
   display: flex;
   flex-direction: column;
@@ -20,24 +19,52 @@ section {
 
 header {
   color: whitesmoke;
-  margin-bottom: 1em;
-}
-
-main {
-  background-color: white;
-  border: 2px solid black;
-  height: 1000px;
-  width: 1000px;
+  margin-bottom: 2em;
 }
 
 section {
-  background-color: yellow;
+  background-color: #2E5894;
   height:800px;
   width: 600px;
+  padding: 1em;
 }
 
 box {
-  background-color: blue;
+  background-color: #2E5894;
   height: 700px;
   width: 500px;
 }
+
+/* ----- Calculator -----*/
+
+#display {
+  height: 25%;
+  width: 100%;
+  background-color: #B3C4CF;
+}
+
+#reset-buttons {
+  height: 15%;
+  width: 100%;
+  background-color: #91A3B0;
+}
+
+#btm-inner-box {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+#numbers {
+  width: 75%;
+  height: 100%;
+  background-color: #6e8091;
+}
+
+#operations {
+  width: 25%;
+  height: 100%;
+  background-color: #91A3B0;
+}
+

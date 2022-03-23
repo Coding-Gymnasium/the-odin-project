@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
     <title>Calculator</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css" rel="stylesheet" />
+    <link rel='icon' type='image/x-icon' href='./public/calculator.png'>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link href='style.css' rel='stylesheet' />
   </head>
   <body>
     <header>
       <h1>Calculator</h1>
     </header>
-    <main>
-      <section>
-        <box> </box>
-      </section>
-    </main>
+    <section>
+      <box>
+        <div id='display'></div>
+        <div id='reset-buttons'></div>
+        <div id='btm-inner-box'>
+          <div id='numbers'></div>
+          <div id='operations'></div>
+        </div>
+      </box>
+    </section>
     <footer></footer>
-    <script src="script.js" type="module"></script>
+    <script src='script.js' type='module'></script>
   </body>
 </html>
