@@ -48,13 +48,13 @@ header {
   word-break: break-all;
   padding: 1rem;
   background-color: #008082;
-  color: #00D5D5;
-  margin-bottom: 5px;
+  color: #00d5d5;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .output > #current-operand {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 /* ---- Buttons ---- */
@@ -138,4 +138,55 @@ footer {
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
+}
+
+/*----- Media Query ---------*/
+
+@media only screen and (max-width: 425px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header {
+    font-size: 3em;
+  }
+
+  .calculator-grid {
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: minmax(50px, auto) repeat(4, 50px);
+    padding: 2px;
+    gap: 1px;
+  }
+
+  .output {
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 1px;
+    font-size: 0.5rem;
+  }
+
+  .output > #current-operand {
+    font-size: 1rem;
+  }
+
+  .buttons-left,
+  .buttons-right {
+    gap: 1px;
+  }
+
+  #button,
+  #dbl-button {
+    line-height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .buttons-left {
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(4, 50px);
+  }
+
+  .buttons-right {
+    grid-template-columns: repeat(2, 50px);
+    grid-template-rows: repeat(4, 50px);
+  }
 }
