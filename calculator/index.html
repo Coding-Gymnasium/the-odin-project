@@ -6,42 +6,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer></script>
   </head>
+
   <body>
     <header>Calculator</header>
-    <div class="calculator-grid">
-      <div class="output">
-        <div data-previous-operand id="previous-operand">previous</div>
-        <div data-current-operand id="current-operand">current</div>
-      </div>
+    <main>
+      <div class="calculator-grid">
+        <div class="output">
+          <div data-previous-operand id="previous-operand">previous</div>
+          <div data-current-operand id="current-operand">current</div>
+        </div>
 
-      <div class="buttons-left">
-        <div id="button" class="number">1</div>
-        <div id="button" class="number">2</div>
-        <div id="button" class="number">3</div>
-        <div id="button" class="number">4</div>
-        <div id="button" class="number">5</div>
-        <div id="button" class="number">6</div>
-        <div id="button" class="number">7</div>
-        <div id="button" class="number">8</div>
-        <div id="button" class="number">9</div>
-        <div id="button">+/-</div>
-        <div id="button" class="number">0</div>
-        <div id="button">.</div>
-      </div>
+        <div class="buttons-left">
+          <div id="button" class="number">1</div>
+          <div id="button" class="number">2</div>
+          <div id="button" class="number">3</div>
+          <div id="button" class="number">4</div>
+          <div id="button" class="number">5</div>
+          <div id="button" class="number">6</div>
+          <div id="button" class="number">7</div>
+          <div id="button" class="number">8</div>
+          <div id="button" class="number">9</div>
+          <div id="button">+/-</div>
+          <div id="button" class="number">0</div>
+          <div id="button">.</div>
+        </div>
 
-      <div class="buttons-right">
-        <div id="button">C</div>
-        <div id="button">AC</div>
-        <div id="button">÷</div>
-        <div id="button">×</div>
-        <div id="button">+</div>
-        <div id="button">−</div>
-        <div id="dbl-button">=</div>
+        <div class="buttons-right">
+          <div id="button">C</div>
+          <div id="button">AC</div>
+          <div id="button">÷</div>
+          <div id="button">×</div>
+          <div id="button">+</div>
+          <div id="button">−</div>
+          <div id="dbl-button">=</div>
+        </div>
       </div>
-    </div>
-
-    <footer>footer</footer>
+    </main>
+    <footer>
+      <a href="https://github.com/nicorithner" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://github.com/nicorithner" target="_blank" id="github-link">Github: nicorithner</a>
+    </footer>
     <script src="script.js" type="module"></script>
   </body>
 </html>
