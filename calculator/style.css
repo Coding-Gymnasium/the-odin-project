@@ -30,8 +30,6 @@ header {
 .calculator-grid {
   border: 1px solid white;
   display: grid;
-  justify-content: center;
-  align-content: center;
   grid-template-columns: repeat(5, 90px);
   grid-template-rows: minmax(120px, auto);
   width: fit-content;
@@ -48,7 +46,6 @@ header {
   word-break: break-all;
   padding: 1rem;
   background-color: teal;
-  border: 1px solid white;
   color: #fffffff8;
   margin-bottom: 5px;
 }
@@ -64,21 +61,23 @@ header {
   gap: 5px;
 }
 
+#button,
+#dbl-button {
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  align-items: center;
+  line-height: 80px;
+}
+
 .buttons-left {
   grid-column: 1 / 4;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   grid-template-rows: repeat(4, 80px);
-  margin-right: 5px;
 }
 
 .buttons-left > #button {
-  cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid white;
-  text-align: center;
-  align-items: center;
-  line-height: 80px;
   background-color: gray;
 }
 
@@ -89,15 +88,13 @@ header {
 .buttons-right {
   grid-column: 4/-1;
   display: grid;
+  justify-content: right;
   grid-template-columns: repeat(2, 85px);
   grid-template-rows: repeat(4, 80px);
 }
 
 .buttons-right > #button,
 #dbl-button {
-  cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid white;
   background-color: gray;
 }
 
@@ -112,4 +109,3 @@ footer {
   font-size: 1rem;
   margin-top: 2rem;
 }
-
