@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+/*--- Main ---- */
+
 body {
   background-color: #333333;
   position: absolute;
@@ -22,6 +24,8 @@ header {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
+
+/*---- Calculator -----*/
 
 .calculator-grid {
   border: 1px solid white;
@@ -75,6 +79,11 @@ header {
   text-align: center;
   align-items: center;
   line-height: 80px;
+  background-color: gray;
+}
+
+#button.number {
+  background-color: white;
 }
 
 .buttons-right {
@@ -95,6 +104,8 @@ header {
 .buttons-right > #dbl-button {
   grid-column: span 2;
 }
+
+/*---- Footer ----*/
 
 footer {
   color: white;
