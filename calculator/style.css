@@ -58,6 +58,9 @@ body {
   cursor: pointer;
   font-size: 2rem;
   border: 1px solid white;
+  text-align: center;
+  align-items: center;
+  line-height: 80px;
 }
 
 .buttons-right {
