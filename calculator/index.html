@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
     <title>Calculator</title>
-    <link rel='icon' type='image/x-icon' href='./public/calculator.png' />
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <link href='style.css' rel='stylesheet' />
+    <link rel="icon" type="image/x-icon" href="./public/calculator.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <h1>Calculator</h1>
-    </header>
-    <section>
-      <box>
-        <div id='display'></div>
-        <div id='reset-buttons'>
-          <div id='clear-btn'></div>
-          <div id='undo-btn'></div>
-        </div>
-        <div id='btm-inner-box'>
-          <div id='numbers'>
-            <div id='number-btn'>1</div>
-          </div>
-          <div id='operations'>
-            <div id='operation-btn'>÷</div>
-            <div id='operation-btn'>x</div>
-            <div id='operation-btn'>-</div>
-            <div id='operation-btn'>+</div>
-          </div>
-        </div>
-      </box>
-    </section>
-    <footer></footer>
-    <script src='script.js' type='module'></script>
+    <div class="calculator-grid">
+      <div class="output">
+        <div data-previous-operand id="previous-operand">previous</div>
+        <div data-current-operand id="current-operand">current</div>
+      </div>
+
+      <div class="buttons-left">
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+      </div>
+
+      <div class="buttons-right">
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="button"></div>
+        <div id="dbl-button"></div>
+      </div>
+    </div>
+
+    <footer>footer</footer>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
