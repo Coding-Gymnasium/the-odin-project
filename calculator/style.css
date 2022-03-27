@@ -19,7 +19,6 @@ main {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-
 }
 
 header {
@@ -48,9 +47,10 @@ header {
   word-wrap: break-word;
   word-break: break-all;
   padding: 1rem;
-  background-color: teal;
-  color: #fffffff8;
+  background-color: #008082;
+  color: #00D5D5;
   margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .output > #current-operand {
@@ -73,6 +73,11 @@ header {
   line-height: 80px;
 }
 
+#button:hover,
+#dbl-button:hover {
+  border: 1px solid white;
+}
+
 .buttons-left {
   grid-column: 1 / 4;
   display: grid;
@@ -81,11 +86,11 @@ header {
 }
 
 .buttons-left > #button {
-  background-color: gray;
+  background-color: #708091;
 }
 
 #button.number {
-  background-color: white;
+  background-color: #91a3b0;
 }
 
 .buttons-right {
@@ -98,7 +103,7 @@ header {
 
 .buttons-right > #button,
 #dbl-button {
-  background-color: gray;
+  background-color: #708091;
 }
 
 .buttons-right > #dbl-button {
@@ -118,7 +123,6 @@ footer {
   padding: 10px;
   position: fixed;
 }
-
 
 .fa-github {
   color: black;
