@@ -5,6 +5,8 @@ const btnright = document.querySelector('.buttons-right');
 const numbers = btnsLeft.querySelectorAll('.number');
 const otherBtn = btnright.querySelectorAll('.other-btn');
 const preOperandArr = [];
+let currOperandArr = [];
+const operations = ['+', '−', '×', '÷', '='];
 const clr = document.querySelector('.clear');
 const allClr = document.querySelector('.allClear');
 const division = document.querySelector('.division');
@@ -14,12 +16,24 @@ const minus = document.querySelector('.minus');
 const equal = document.querySelector('.equal');
 
 const updateOperands = (number) => {
-  preOperandArr.push(number);
-  prevOperand.textContent = preOperandArr.join(' ');
-  currOperand.textContent = number;
+  if (operations.includes(number)) {
+    if (currOperandArr[0] == '0') {
+      currOperandArr.shift();
+    }
+    prevOperand.textContent =
+      `${ prevOperand.textContent } ${currOperandArr.join('')} ${number}`;
+    currOperand.textContent = '0';
+    currOperandArr = ['0'];
+  } else {
+    if (currOperandArr[0] == '0') {
+      currOperandArr.shift();
+    }
+    currOperandArr.push(number);
+    currOperand.textContent = currOperandArr.join('');
+  }
 };
 
-// ----- Numbers
+// ----- Buttons
 numbers.forEach((number) => {
   number.addEventListener('click', () => {
     let newNumber = number.textContent;
@@ -34,9 +48,7 @@ otherBtn.forEach((button) => {
   });
 });
 
-
 // ---- Other buttons
-
 
 // const clearLast = () => {
 //   clr.addEventListener('mousedown', () => {
