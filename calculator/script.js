@@ -1,3 +1,5 @@
+import { Calculations } from './components/Calculations.js';
+
 const prevOperand = document.querySelector('#previous-operand');
 const currOperand = document.querySelector('#current-operand');
 const btnsLeft = document.querySelector('.buttons-left');
@@ -7,21 +9,30 @@ const otherBtn = btnright.querySelectorAll('.other-btn');
 const preOperandArr = [];
 let currOperandArr = [];
 const operations = ['+', '−', '×', '÷', '='];
-const clr = document.querySelector('.clear');
-const allClr = document.querySelector('.allClear');
-const division = document.querySelector('.division');
-const multiplication = document.querySelector('.multiplication');
-const plus = document.querySelector('.plus');
-const minus = document.querySelector('.minus');
-const equal = document.querySelector('.equal');
+// const clr = document.querySelector('.clear');
+// const allClr = document.querySelector('.allClear');
+
+// const division = document.querySelector('.division');
+// const multiplication = document.querySelector('.multiplication');
+// const plus = document.querySelector('.plus');
+// const minus = document.querySelector('.minus');
+// const equal = document.querySelector('.equal');
 
 const updateOperands = (number) => {
   if (operations.includes(number)) {
     if (currOperandArr[0] == '0') {
       currOperandArr.shift();
     }
-    prevOperand.textContent =
-      `${ prevOperand.textContent } ${currOperandArr.join('')} ${number}`;
+    let total = `${prevOperand.textContent} ${currOperandArr.join(
+      ''
+    )} ${number}`;
+
+    let newOutput = Calculations(total);
+
+    prevOperand.textContent = total;
+    // prevOperand.textContent = newOutput;
+
+    // prevOperand.textContent = newOutput;
     currOperand.textContent = '0';
     currOperandArr = ['0'];
   } else {
@@ -48,7 +59,7 @@ otherBtn.forEach((button) => {
   });
 });
 
-// ---- Other buttons
+// ---- Clear buttons
 
 // const clearLast = () => {
 //   clr.addEventListener('mousedown', () => {
