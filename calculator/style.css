@@ -65,7 +65,7 @@ header {
 }
 
 #button,
-#dbl-button {
+.equal {
   cursor: pointer;
   font-size: 2rem;
   text-align: center;
@@ -74,7 +74,7 @@ header {
 }
 
 #button:hover,
-#dbl-button:hover {
+.equal:hover {
   border: 1px solid white;
 }
 
@@ -102,11 +102,11 @@ header {
 }
 
 .buttons-right > #button,
-#dbl-button {
+.equal {
   background-color: #708091;
 }
 
-.buttons-right > #dbl-button {
+.buttons-right > .equal {
   grid-column: span 2;
 }
 
