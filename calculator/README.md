@@ -27,3 +27,11 @@ It has a backspace button to undo
 It has keyboard support
 
 
+Calculation Story
+
+- when I enter a number it shows in the bottom display.
+- when I press an operation sign following a number, the button gets highlighted with a border.
+- when I add another number and 
+  - press equal, the result replaces the existing number.
+  - press an operation button, the result replaces the existing number and the button gets highlighted with a border.
+
