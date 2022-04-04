@@ -72,7 +72,7 @@ header {
 
 #button:hover,
 .equal:hover {
-  border: 1px solid white;
+  border: 1px solid #B3C4CF;
 }
 
 .buttons-left {
@@ -96,6 +96,11 @@ header {
   justify-content: right;
   grid-template-columns: repeat(2, 85px);
   grid-template-rows: repeat(4, 80px);
+}
+
+.active-btn {
+  display: block;
+  border: 3px solid #B3C4CF;
 }
 
 .buttons-right > #button,
