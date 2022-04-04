@@ -6,7 +6,6 @@ let set = [];
 let calculation;
 const operations = ['+', '−', '×', '÷', '='];
 
-
 export const UpdateDisplay = (key) => {
   if (operations.includes(key)) {
     //---> don't add operation if there are no number in the current operand display
@@ -14,6 +13,7 @@ export const UpdateDisplay = (key) => {
       alert('Enter a number first');
       return;
     }
+
     //---> checks for 0s on left side
     checkForZero();
 
@@ -29,7 +29,6 @@ export const UpdateDisplay = (key) => {
 
     //---> Displays a string to show on current operand display
     currOperand.textContent = calculation;
-
     currOperandArr = [];
   } else {
     checkForZero();
@@ -44,8 +43,9 @@ const checkForZero = () => {
   }
 };
 
-// when I enter a number it shows in the bottom display.
-// when I press an operation sign following a number, the button gets highlighted with a border.
+// TODO
+// [x] when I enter a number it shows in the bottom display.
+// [x] when I press an operation sign following a number, the button gets highlighted with a border.
 // when I add another number and
-//  - press equal, the result replaces the existing number.
-//  - press an operation button, the result replaces the existing number and the button gets highlighted with a border.
+//  - [x] press equal, the result replaces the existing number.
+//  - [x] press an operation button, the result replaces the existing number and the button gets highlighted with a border.
