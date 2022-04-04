@@ -50,11 +50,8 @@ header {
   background-color: #008082;
   color: #00d5d5;
   font-weight: 600;
+  font-size: 3rem;
   margin-bottom: 5px;
-}
-
-.output > #current-operand {
-  font-size: 2rem;
 }
 
 /* ---- Buttons ---- */
@@ -65,7 +62,7 @@ header {
 }
 
 #button,
-#dbl-button {
+.equal {
   cursor: pointer;
   font-size: 2rem;
   text-align: center;
@@ -74,8 +71,8 @@ header {
 }
 
 #button:hover,
-#dbl-button:hover {
-  border: 1px solid white;
+.equal:hover {
+  border: 1px solid #B3C4CF;
 }
 
 .buttons-left {
@@ -101,12 +98,17 @@ header {
   grid-template-rows: repeat(4, 80px);
 }
 
+.active-btn {
+  display: block;
+  border: 3px solid #B3C4CF;
+}
+
 .buttons-right > #button,
-#dbl-button {
+.equal {
   background-color: #708091;
 }
 
-.buttons-right > #dbl-button {
+.buttons-right > .equal {
   grid-column: span 2;
 }
 
@@ -163,9 +165,6 @@ footer {
     gap: 1rem;
     margin-bottom: 1px;
     font-size: 0.5rem;
-  }
-
-  .output > #current-operand {
     font-size: 1rem;
   }
 
