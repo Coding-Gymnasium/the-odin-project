@@ -44,6 +44,10 @@ const checkForZero = () => {
 };
 
 // TODO
+// [ ] After pressing '=' and the result displays, one can press an operation
+//     sign and perform a calculation using the previous result.
+// [ ] When an operation sign gets pressed and there are no numbers to perform
+//     and operation, it shouldn't highligth the button.
 // [x] when I enter a number it shows in the bottom display.
 // [x] when I press an operation sign following a number, the button gets highlighted with a border.
 // when I add another number and
