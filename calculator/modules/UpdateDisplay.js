@@ -5,6 +5,8 @@ let currOperandArr = [];
 let set = [];
 let calculation;
 const operations = ['+', '−', '×', '÷', '='];
+const clr = document.querySelector('.clear');
+const clrAll = document.querySelector('.clearAll');
 
 export const UpdateDisplay = (key) => {
   if (operations.includes(key)) {
@@ -30,6 +32,10 @@ export const UpdateDisplay = (key) => {
     //---> Displays a string to show on current operand display
     currOperand.textContent = calculation;
     currOperandArr = [];
+  } else if (key === clr.textContent) {
+    clearLast();
+  } else if (key === clrAll.textContent) {
+    clearAll();
   } else {
     checkForZero();
     currOperandArr.push(key);
@@ -41,6 +47,16 @@ const checkForZero = () => {
   if (currOperandArr[0] == '0') {
     currOperandArr.shift();
   }
+};
+
+const clearAll = () => {
+  currOperand.textContent = 0;
+  currOperandArr = [];
+};
+
+const clearLast = () => {
+  currOperand.textContent = currOperand.textContent.slice(0, -1);
+  currOperandArr.pop();
 };
 
 // TODO
