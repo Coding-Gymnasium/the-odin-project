@@ -1,3 +1,14 @@
+:root {
+  --dark-charcoal: #333333;
+  --teal: #008082;
+  --dark-turquoise: #00d5d5;
+  --slate-gray: #708091;
+  --cadete-gray: #91a3b0;
+  --pastel-blue: #B3C4CF;
+  --white: #fff;
+  --black: #000;
+}
+
 *,
 *::before,
 *::after {
@@ -7,7 +18,7 @@
 }
 
 body {
-  background-color: #333333;
+  background-color: var(--dark-charcoal);
   text-align: center;
 }
 
@@ -22,7 +33,7 @@ main {
 }
 
 header {
-  color: white;
+  color: var(--white);
   font-size: 5rem;
   padding: 1em;
 }
@@ -30,7 +41,7 @@ header {
 /*---- Calculator -----*/
 
 .calculator-grid {
-  border: 1px solid white;
+  border: 1px solid var(--white);
   display: grid;
   grid-template-columns: repeat(5, 90px);
   grid-template-rows: minmax(120px, auto);
@@ -47,8 +58,8 @@ header {
   word-wrap: break-word;
   word-break: break-all;
   padding: 1rem;
-  background-color: #008082;
-  color: #00d5d5;
+  background-color: var(--teal) ;
+  color: var(--dark-turquoise);
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 5px;
@@ -72,7 +83,7 @@ header {
 
 #button:hover,
 .equal:hover {
-  border: 1px solid #B3C4CF;
+  border: 3px solid var(--pastel-blue);
 }
 
 .buttons-left {
@@ -83,11 +94,11 @@ header {
 }
 
 .buttons-left > #button {
-  background-color: #708091;
+  background-color: var(--slate-gray);
 }
 
 #button.number {
-  background-color: #91a3b0;
+  background-color: var(--cadete-gray);
 }
 
 .buttons-right {
@@ -100,12 +111,12 @@ header {
 
 .active-btn {
   display: block;
-  border: 3px solid #B3C4CF;
+  border: 3px solid var(--pastel-blue);
 }
 
 .buttons-right > #button,
 .equal {
-  background-color: #708091;
+  background-color: var(--slate-gray);
 }
 
 .buttons-right > .equal {
@@ -127,7 +138,7 @@ footer {
 }
 
 .fa-github {
-  color: black;
+  color: var(--black);
   font-size: 3rem;
   transition: transform 0.3s ease-in-out;
 }
@@ -137,7 +148,7 @@ footer {
 }
 
 #github-link {
-  color: white;
+  color: var(--white);
   font-size: 1.5rem;
   text-decoration: none;
 }
