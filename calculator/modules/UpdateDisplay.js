@@ -4,11 +4,13 @@ const currOperand = document.querySelector('.output');
 let currOperandArr = [];
 let set = [];
 let calculation;
+let input;
 const operations = ['+', '−', '×', '÷', '='];
 const clr = document.querySelector('.clear');
 const clrAll = document.querySelector('.clearAll');
 
 export const UpdateDisplay = (key) => {
+  input = currOperandArr.join('');
   if (operations.includes(key)) {
     //---> don't add operation if there are no number in the current operand display
     if (!currOperandArr[0]) {
@@ -20,7 +22,7 @@ export const UpdateDisplay = (key) => {
     checkForZero();
 
     // build set array to run calculation
-    set.push(currOperandArr.join(''));
+    set.push(input);
     set.push(key);
 
     if (set.length > 2) {
@@ -30,7 +32,9 @@ export const UpdateDisplay = (key) => {
     }
 
     //---> Displays a string to show on current operand display
-    currOperand.textContent = calculation;
+    calculation
+      ? (currOperand.textContent = calculation)
+      : (currOperand.textContent = input);
     currOperandArr = [];
   } else if (key === clr.textContent) {
     clearLast();
