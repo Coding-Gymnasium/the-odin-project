@@ -1,4 +1,5 @@
 import { Calculations } from './Calculations.js';
+import { RemoveHighlight } from './GetKeys.js'
 
 const currOperand = document.querySelector('.output');
 const clr = document.querySelector('.clear');
@@ -10,15 +11,20 @@ const result = [];
 const operations = ['+', '−', '×', '÷', '='];
 
 export const UpdateDisplay = (key) => {
-  console.log('key: ', key);
   if (operations.includes(key)) {
     let calculation;
     let input;
 
     //---> don't add operation if there are no number in the current operand display
     if (!currOperandArr[0]) {
-      alert('Enter a number first');
-      return;
+      if (result.length != 0) {
+        currOperandArr.splice(0, currOperandArr.length, ...result);
+        set.length = 0;
+      } else {
+        console.error('Enter a number');
+        RemoveHighlight();
+        return;
+      }
     }
     //---> checks for 0s on left side
     checkForZero();
@@ -26,22 +32,16 @@ export const UpdateDisplay = (key) => {
     // build set array to run calculation
     input = currOperandArr.join('');
     set.push(input);
-    set.push(key);
+    if (key != '=') set.push(key);
 
     // run calculation if complete set
     if (set.length > 2) {
       calculation = Calculations(set[0], set[1], set[2]);
-      set.splice(0, set.length, calculation); // replace set values with calculation value
       result.splice(0, result.length, calculation); // replace result value with calculation value
+      currOperandArr.splice(0, currOperandArr.length, calculation); // replace currOperandArr value with calculation value
 
       // only push key into set if it is not '='
-      if (key != '=') set.push(key);
-
-      console.log('input: ', input);
-      console.log('set: ', set);
-      console.log('result: ', result);
-      console.log('currOperandArr: ', currOperandArr);
-      console.log('currOperand: ', currOperand);
+      if (key != '=' && !operations.includes(set[set.length - 1])) set.push(key);
     }
 
     //---> Displays a string to show on current operand display
@@ -79,9 +79,9 @@ const clearLast = () => {
 };
 
 // TODO
-// [ ] After pressing '=' and the result displays, one can press an operation
+// [x] After pressing '=' and the result displays, one can press an operation
 //     sign and perform a calculation using the previous result.
-// [ ] When an operation sign gets pressed and there are no numbers to perform
+// [x] When an operation sign gets pressed and there are no numbers to perform
 //     and operation, it shouldn't highligth the button.
 // [x] when I enter a number it shows in the bottom display.
 // [x] when I press an operation sign following a number, the button gets highlighted with a border.
