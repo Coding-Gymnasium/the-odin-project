@@ -16,12 +16,12 @@ export const GetKeys = () => {
 
 const hightlightKey = (keyClass) => {
   if (keyClass.includes('other-btn')) {
-    removeHighlight();
+    RemoveHighlight();
     document.querySelector(`.${keyClass[0]}`).classList.add('active-btn');
   }
 };
 
-const removeHighlight = () => {
+export const RemoveHighlight = () => {
   keys.forEach((key) => {
     if (key.classList.value.split(' ').includes('active-btn')) {
       key.classList.remove('active-btn');
